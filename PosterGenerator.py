@@ -36,6 +36,7 @@ def init_args():
     parser.add_argument('--fontSize', default='80')
     parser.add_argument('--fontType', default='KaiTi')
     parser.add_argument('--resolutionRatio',default='(1920,1080)')
+    parser.add_argument('--save', default='png')
 
     return parser.parse_args()
 
@@ -85,7 +86,7 @@ def get_text_position(text, font, background_size): # 这个画图计算一下
 
 
     
-def make_poster(text, resolutionRatio, fontType, fontSize, fontColor, backgroundColor):
+def make_poster(text, resolutionRatio, fontType, fontSize, fontColor, backgroundColor, saveFileType='png'):
 
     fontPath = dict_Font_Path[fontType]
     pictureSize = resolutionRatio
@@ -106,8 +107,7 @@ def make_poster(text, resolutionRatio, fontType, fontSize, fontColor, background
     for line_index, line in enumerate(text):
         draw.text(textPositionList[line_index], text[line_index], fill=fontColor, font=font)
 
-    image.save('PurePoster.bmp', 'bmp')
-    image.save('PurePoster.jpeg', 'jpeg')
+    image.save('PurePoster.'+saveFileType, saveFileType)
 
 if __name__ == '__main__':
 
@@ -120,12 +120,12 @@ if __name__ == '__main__':
     fontType = args.fontType
     fontSize = int(args.fontSize)
     resolutionRatio = str_to_tuple(args.resolutionRatio) # Temporarily, the argument is not used. We use `device` indeed
-
+    saveFileType = args.save
     '''`text` should be such format: 'eat food,,today':
     eat food
 
     today'''
 
-    make_poster(text=text, resolutionRatio=resolutionRatio, fontType=fontType,fontSize=fontSize, fontColor=fontColor, backgroundColor=backgroundColor)
+    make_poster(text=text, resolutionRatio=resolutionRatio, fontType=fontType,fontSize=fontSize, fontColor=fontColor, backgroundColor=backgroundColor, saveFileType=saveFileType)
 
     print('==========Finish==========')
