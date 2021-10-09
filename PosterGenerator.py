@@ -106,7 +106,8 @@ def make_poster(text, resolutionRatio, fontType, fontSize, fontColor, background
     for line_index, line in enumerate(text):
         draw.text(textPositionList[line_index], text[line_index], fill=fontColor, font=font)
 
-    image.save('PurePoster.jpg', 'jpeg')
+    image.save('PurePoster.bmp', 'bmp')
+    image.save('PurePoster.jpeg', 'jpeg')
 
 if __name__ == '__main__':
 
