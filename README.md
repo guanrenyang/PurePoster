@@ -1,6 +1,6 @@
 # PurePoster
 
-PurePoster is a fancy tool for making **arbitrary-resolution, simple-style posters** or wallpapers with ***text in center***.
+![](.\resource\icon.png) PurePoster is a fancy tool for making **arbitrary-resolution, simple-style posters** or wallpapers with ***text in center***.
 
 ## Functionality
 
