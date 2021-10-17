@@ -17,7 +17,7 @@ What's more, `font type`, ` font size`, `font color`,`background color` and, of 
 
 ## Usage
 ```
-python --text Hello-world,,Hello-world --save png --resolutionRatio (1920,1080) --fontColor #ED955F --backgroundColor #467794 --fontSize 80 --fontType KaiTi 
+python PosterGenerator.py --text Hello-world,,Hello-world --save png --resolutionRatio (1920,1080) --fontColor #ED955F --backgroundColor #467794 --fontSize 80 --fontType KaiTi 
 ```
 
 ## Example
